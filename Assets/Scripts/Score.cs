@@ -1,0 +1,26 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Score : MonoBehaviour {
+
+	public Text scoreText;
+	public int fruitValue;
+
+	private int score;
+	// Use this for initialization
+	void Start () {
+		score = 0;
+		UpdateScore ();
+	}
+
+	void UpdateScore () {
+		scoreText.text = "Score:\n" + score;	
+	}
+
+	void OnTriggerEnter2D() {
+		score += fruitValue;
+		UpdateScore ();
+	}
+}
